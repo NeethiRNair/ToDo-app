@@ -1,0 +1,10 @@
+
+.color{
+    color: rgb(134, 34, 39);;
+    
+}
+.btncolor{
+    background-color: rgb(134, 34, 39);
+    color : #fff;
+    width: inherit;
+}

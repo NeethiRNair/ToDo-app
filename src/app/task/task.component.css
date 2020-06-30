@@ -1,4 +1,4 @@
-/* body{
+body{
     align-items: center;
     text-align: center;
 }
@@ -15,4 +15,13 @@
 .btns{
     margin-left: 3px;
     color: white;
-} */
+}
+.pointer{
+    cursor: pointer;
+}
+.done{
+    color: green;
+}
+.notDone{
+    color: rgb(201, 132, 54);
+}

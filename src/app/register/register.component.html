@@ -1,0 +1,87 @@
+<app-header></app-header>
+<div class="container py-5 text-center">
+    <div class="row">
+        <div class="content-border col-sm-6 offset-sm-3 ">
+            <h3 class="color">Register Here!!!</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="content-border jumbotron jumbotron-fluid col-sm-6 offset-sm-3">
+            <form [formGroup]='registerForm' (ngSubmit)="register()" class="py-2">
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <input type="text" placeholder="First Name" class="form-control" formControlName="firstName">
+                        <div *ngIf="getControl('firstName').errors && (getControl('firstName').touched || getControl('firstName').dirty)">
+                            <div *ngIf="getControl('firstName').errors.required">
+                                First Name cannot be empty
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <input type="text" placeholder="Last Name" class="form-control" formControlName="lastName">
+                        <div *ngIf="getControl('lastName').errors && (getControl('lastName').touched || getControl('lastName').dirty)">
+                            <div *ngIf="getControl('lastName').errors.required">
+                                Last Name cannot be empty
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                        <div *ngIf="getControl('email').errors  && (getControl('email').touched || getControl('email').dirty)">
+                            <div *ngIf="getControl('email').errors.required">Email cannot be empty</div>
+                            <div *ngIf="getControl('email').errors.email">Enter a valid email</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <input type="text" placeholder="User Name" class="form-control" formControlName="userName">
+                        <div *ngIf="getControl('userName').errors && (getControl('userName').touched || getControl('userName').dirty)">
+                            <div *ngIf="getControl('userName').errors.required">
+                                User Name cannot be empty
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <input type="text" class="form-control" placeholder="Password" formControlName="password">
+                        <div *ngIf="getControl('password').errors && (getControl('password').touched || getControl('password').dirty)">
+                            <div *ngIf="getControl('password').errors.required">
+                                Password cannot be empty
+                            </div>
+                            <div *ngIf="getControl('password').errors.minlength">    
+                                Password must contain atleast 5 characters
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <input type="text" class="form-control" placeholder="Confirm Password" formControlName="confirmPassword">
+                        <div *ngIf="getControl('confirmPassword').errors && (getControl('confirmPassword').touched || getControl('password').dirty)">
+                            <div *ngIf="getControl('confirmPassword').errors.required">
+                                Password cannot be empty
+                            </div>
+                            <div *ngIf="getControl('confirmPassword').errors.minlength">
+                                Password must contain atleast 5 characters
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div *ngIf="registerForm.errors">
+                    Password doesnot match
+                </div>
+                    <div class="form-group">
+                        <button class="btn btncolor" type="submit" [disabled]='!registerForm.valid'>Register</button>
+                    </div> 
+                          
+            </form>
+            <!-- <a routerLink="/register">Register</a> -->
+        </div>
+    </div>
+</div>
+
+
+
